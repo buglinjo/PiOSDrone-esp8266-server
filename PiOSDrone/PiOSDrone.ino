@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
-#include <SPI.h>
 #include <WebSocketsServer.h>
+#include <SPI.h>
 
 WebSocketsServer webSocket = WebSocketsServer(81);
 
@@ -14,7 +14,7 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t *payload, size_t length)
         case WStype_CONNECTED: {
             IPAddress ip = webSocket.remoteIP(num);
             Serial.printf("[%u] Connected from %d.%d.%d.%d\n", num, ip[0], ip[1], ip[2], ip[3]);
-        	  break;
+        	break;
         }
 
         case WStype_TEXT:
